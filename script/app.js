@@ -46,9 +46,12 @@ function search(event) {
       currentTemp.innerHTML = `${celsiusTemp}`;
     });
 
+    let currentImage = document.getElementById("current-png");
+    let currentWeatherImage = response.data.weather[0].icon.currentImage;
     let description = document.getElementById("descrip");
     let currentDescription = response.data.weather[0].description;
     description.innerHTML = `${currentDescription}`;
+    currentImage.innerHTML = `${currentWeatherImage}`;
 
     let humidity = document.getElementById("humidity");
     let currentHumidity = Math.round(response.data.main.humidity);
