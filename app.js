@@ -62,9 +62,6 @@ function search(event) {
       h3.innerHTML = `${city}`;
     } else if (checkbox.checked) {
       h3.innerHTML = response.data.name;
-    } else {
-      h3.innerHTML = null;
-      alert("Please Enter Location or Search Current Location");
     }
   }
 
