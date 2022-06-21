@@ -63,14 +63,14 @@
         <p class="h3 ml-2" id="current-time"></p>
         <hr />
         <div class="row">
-          <div class="col col-5 p-2">
+          <div class="col-4 pt-5">
             <div class="weather-icon" id="current-png"></div>
           </div>
-          <div class="col-7 p-2">
-            <div class="card-body pb-0 ml-2 mr-10">
+          <div class="col-8">
+            <div class="card-body pb-0 ml-0 mr-3">
               <h5 class="card-title mb-4" id="currently">Currently</h5>
               <div class="current-temp">
-                <span class="temperature" id="current-temp"></span>
+                <span class="temperature mb-1" id="current-temp"></span>
                 <span class="degrees">
                   <button
                     type="button"
@@ -91,9 +91,12 @@
               </div>
             </div>
             <div class="col">
-              <div class="card-body pt-0">
+              <div class="card-body pt-0 pb-4 mt-0">
                 <div class="card-text" id="descrip">
                   <small class="text-muted">Description:</small>
+                </div>
+                <div class="card-text" id="feels">
+                  <small class="text-muted">Feels like:</small>
                 </div>
                 <div class="card-text" id="humidity">
                   <small class="text-muted">Humidity:</small>
@@ -109,14 +112,14 @@
     </div>
     <div class="card-deck">
       <div class="card bg-primary">
-        <h5 class="card-title text-center">Mon</h5>
+        <h5 class="card-title text-center" id="following-day"></h5>
         <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
         <div class="card-body">
           <p class="card-text text-center"><strong>0°|0°</strong></p>
         </div>
       </div>
       <div class="card bg-primary">
-        <h5 class="card-title text-center">Tue</h5>
+        <h5 class="card-title text-center" id="2-days-later"></h5>
         <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
         <div class="card-body">
           <p class="card-text text-center">
@@ -125,21 +128,21 @@
         </div>
       </div>
       <div class="card bg-primary">
-        <h5 class="card-title text-center">Wed</h5>
+        <h5 class="card-title text-center" id="3-days-later"></h5>
         <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
         <div class="card-body">
           <p class="card-text text-center"><strong>0°|0°</strong></p>
         </div>
       </div>
       <div class="card bg-primary">
-        <h5 class="card-title text-center">Thur</h5>
+        <h5 class="card-title text-center" id="4-days-later"></h5>
         <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
         <div class="card-body">
           <p class="card-text text-center"><strong>0°|0°</strong></p>
         </div>
       </div>
       <div class="card bg-primary">
-        <h5 class="card-title text-center">Fri</h5>
+        <h5 class="card-title text-center" id="5-days-later"></h5>
         <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
         <div class="card-body">
           <p class="card-text text-center"><strong>0°|0°</strong></p>

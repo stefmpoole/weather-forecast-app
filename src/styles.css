@@ -27,19 +27,10 @@ hr {
   border-top: dotted;
 }
 
-img {
-  max-width: 135%;
-}
-
 .forecast-heading {
   display: block;
   margin: 0 auto;
   font-size: 50px;
-}
-
-.current-png {
-  margin: 10px 20px 0px 20px;
-  text-align: left;
 }
 
 .temperature {
@@ -47,7 +38,7 @@ img {
   font-family: "Poppins", sans-serif;
   font-size: 65px;
   position: relative;
-  top: -25px;
+  top: -5px;
 }
 
 .degrees {
@@ -74,6 +65,11 @@ img {
 
 #current-time {
   font-size: 20px;
+}
+
+#current-png {
+  margin: 10px 2px 0px 2px;
+  text-align: right;
 }
 
 #currently.card-title {
