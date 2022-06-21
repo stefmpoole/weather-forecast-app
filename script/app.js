@@ -46,12 +46,13 @@ function search(event) {
       currentTemp.innerHTML = `${celsiusTemp}`;
     });
 
-    let currentImage = document.getElementById("current-png");
-    let currentWeatherImage = response.data.weather[0].icon.currentImage;
+    let currentIcon = document.querySelector(".weather-icon");
+    const { icon } = response.data.weather[0].icon;
     let description = document.getElementById("descrip");
     let currentDescription = response.data.weather[0].description;
     description.innerHTML = `${currentDescription}`;
-    currentImage.innerHTML = `${currentWeatherImage}`;
+    currentIcon.innerHTML = `img src=icons/${icon}.png`;
+    console.log(response.data.weather[0].icon);
 
     let humidity = document.getElementById("humidity");
     let currentHumidity = Math.round(response.data.main.humidity);
