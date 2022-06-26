@@ -65,9 +65,8 @@ input {
 }
 
 #current-png {
-  max-width: auto;
-  display: block;
-  margin: 0 auto;
+  margin: 10px 2px 0px 2px;
+  text-align: right;
 }
 
 #currently.card-title {
