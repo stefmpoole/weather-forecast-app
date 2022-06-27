@@ -29,122 +29,125 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="row" id="page-background">
-        <div class="card w-100 mt-2 mb-3 ml-1 mr-1">
-          <div class="forecast-heading">
-            <h1><strong>The Umbrella Forecast</strong></h1>
-            <h3>5 Day Weather Report</h3>
-          </div>
-          <div class="location-search">
+    <div class="container mt-2">
+      <div class="card width-50 mt-2 mb-3 ml-1 mr-1" id="location-card">
+        <div class="forecast-heading">
+          <h1 class="ml-1 mr-1"><strong>The Umbrella Forecast</strong></h1>
+          <h3>A 5 Day Weather Report</h3>
+        </div>
+        <div class="location-search">
+          <div
+            class="bg-image rounded text-white ml-2 mr-2"
+            style="
+              background-image: url('https://images.pexels.com/photos/5052681/pexels-photo-5052681.jpeg?cs=srgb&dl=pexels-abhishek-yadav-5052681.jpg&fm=jpg');
+            "
+            id="background-image"
+          >
             <div
-              class="bg-image rounded text-white ml-2 mr-2"
-              style="
-                background-image: url('https://images.pexels.com/photos/5052681/pexels-photo-5052681.jpeg?cs=srgb&dl=pexels-abhishek-yadav-5052681.jpg&fm=jpg');
-              "
-              id="background-image"
+              class="mask rounded"
+              style="background-color: rgba(39, 36, 30, 0.078)"
+              id="background-mask"
             >
-              <div
-                class="mask rounded"
-                style="background-color: rgba(39, 36, 30, 0.078)"
-                id="background-mask"
-              >
-                <form class="form-outline pt-4 ml-2 mr-2" id="location-form">
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter Location"
-                      aria-label="Enter Location"
-                      aria-describedby="basic-addon2"
-                      autocomplete="off"
-                      autofocus="on"
-                      id="search-text-input"
-                    />
-                    <div class="input-group-append">
-                      <button
-                        class="btn btn-secondary"
-                        type="submit"
-                        id="search-button"
-                        value="search"
-                      >
-                        <i class="bi bi-search-heart"></i>
-                      </button>
-                    </div>
+              <form class="form-outline pt-4 ml-2 mr-2" id="location-form">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Location"
+                    aria-label="Enter Location"
+                    aria-describedby="basic-addon2"
+                    autocomplete="off"
+                    autofocus="on"
+                    id="search-text-input"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-secondary"
+                      type="submit"
+                      id="search-button"
+                      value="search"
+                    >
+                      <i class="bi bi-search-heart"></i>
+                    </button>
                   </div>
-                </form>
-                <div class="row text-align-left">
-                  <div class="col-9 ml-2">
-                    <div class="checkbox">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                        <label
-                          class="form-check-label mt-2"
-                          for="flexRadioDefault1"
-                        >
-                          Search My Current Location
-                        </label>
-                      </div>
+                </div>
+              </form>
+              <div class="row text-align-left">
+                <div class="col-9 ml-2">
+                  <div class="checkbox">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label
+                        class="form-check-label mt-2"
+                        for="flexRadioDefault1"
+                      >
+                        Search My Current Location
+                      </label>
                     </div>
                   </div>
                 </div>
-                <div class="row text-align-left">
-                  <div class="col-9 pt-4">
-                    <p class="h3 ml-2" id="h3"></p>
-                    <p class="h3 ml-2" id="current-time"></p>
-                  </div>
+              </div>
+              <div class="row text-align-right">
+                <div class="col-9 pt-4">
+                  <p class="h3 ml-2" id="h3"></p>
+                  <p class="h3 ml-2" id="current-time"></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-1 pt-4">
-              <div class="weather-icon" id="current-png"></div>
+        </div>
+        <div class="row text-align-left">
+          <div class="col-3 mt-5">
+            <div class="weather-icon" id="current-png"></div>
+          </div>
+          <div class="col-8 text-right">
+            <div class="card-body pb-0 ml-0 mr-4 mt-0">
+              <h5 class="card-title" id="currently">Currently</h5>
+              <div class="current-temp">
+                <span class="temperature mb-1" id="current-temp"></span>
+                <span class="degrees">
+                  <button
+                    type="button"
+                    class="btn ml-0 mr-0 pl-0 pr-0"
+                    id="far"
+                  >
+                    °F
+                  </button>
+                  <span class="text-center" id="degree-separation"> | </span>
+                  <button
+                    type="button"
+                    class="btn ml-0 mr-0 pl-0 pr-0"
+                    id="cel"
+                  >
+                    °C
+                  </button>
+                </span>
+              </div>
             </div>
-            <div class="col-10 text-right">
-              <div class="card-body pb-0 ml-0 mr-4 mt-0">
-                <h5 class="card-title" id="currently">Currently</h5>
-                <div class="current-temp">
-                  <span class="temperature mb-1" id="current-temp"></span>
-                  <span class="degrees">
-                    <button
-                      type="button"
-                      class="btn ml-0 mr-0 pl-0 pr-0"
-                      id="far"
-                    >
-                      °F
-                    </button>
-                    <span class="text-center" id="degree-separation"> | </span>
-                    <button
-                      type="button"
-                      class="btn ml-0 mr-0 pl-0 pr-0"
-                      id="cel"
-                    >
-                      °C
-                    </button>
-                  </span>
+            <div class="col">
+              <div class="card-body pt-0 pb-4 mt-0 text-right">
+                <div class="card-text" id="descrip">
+                  <small class="text-white">Description:</small>
+                </div>
+                <div class="card-text" id="feels">
+                  <small class="text-white">Feels like:</small>
+                </div>
+                <div class="card-text" id="humidity">
+                  <small class="text-white">Humidity:</small>
+                </div>
+                <div class="card-text" id="wind">
+                  <small class="text-white">Wind:</small>
                 </div>
               </div>
-              <div class="col">
-                <div class="card-body pt-0 pb-4 mt-0 text-right">
-                  <div class="card-text" id="descrip">
-                    <small class="text-white">Description:</small>
-                  </div>
-                  <div class="card-text" id="feels">
-                    <small class="text-white">Feels like:</small>
-                  </div>
-                  <div class="card-text" id="humidity">
-                    <small class="text-white">Humidity:</small>
-                  </div>
-                  <div class="card-text" id="wind">
-                    <small class="text-white">Wind:</small>
-                  </div>
-                </div>
+            </div>
+            <div class="row">
+              <div class="card-body">
+                Enter current weather description here
               </div>
             </div>
           </div>

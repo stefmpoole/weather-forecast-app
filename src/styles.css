@@ -9,6 +9,7 @@ h3 {
   font-size: 25px;
   font-weight: 600;
   text-align: center;
+  color: #e8d5b3;
 }
 
 input {
@@ -30,22 +31,10 @@ input {
   left: 35px;
 }
 
-.card-columns {
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
-}
-
 .degrees {
   position: relative;
   top: -30px;
   left: 35px;
-}
-
-.card-deck {
-  margin-left: 5px;
-  margin-right: 4px;
-  color: #ffffff;
 }
 
 .card-img-top {
