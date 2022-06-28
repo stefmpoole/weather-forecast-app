@@ -6,10 +6,10 @@ h1 {
 
 h3 {
   font-family: "Poppins", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
-  color: #e8d5b3;
+  color: #221f1d;
 }
 
 input {
@@ -18,23 +18,20 @@ input {
 }
 
 .forecast-heading {
-  display: block;
-  margin: 0 auto;
-  font-size: 50px;
+  font-size: 25px;
 }
 
 .temperature {
   font-family: "Poppins", sans-serif;
-  font-size: 35px;
+  font-size: 25px;
   position: relative;
-  top: -10px;
   left: 35px;
 }
 
 .degrees {
   position: relative;
   top: -30px;
-  left: 35px;
+  left: 25px;
 }
 
 .card-img-top {
@@ -63,17 +60,16 @@ input {
 }
 
 #current-png {
-  margin: 10px 2px 0px 2px;
-  text-align: right;
+  text-align: left;
 }
 
 #currently.card-title {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 #current-temp {
-  color: #e8d5b3;
-  font-size: 60px;
+  color: #221f1d;
+  font-size: 45px;
 }
 
 #descrip.card-text {
