@@ -23,26 +23,19 @@ input {
 }
 
 #currently {
-  font-size: 25px;
-  position: relative;
-  left: 32px;
-  top: 50px;
-  letter-spacing: -1.25px;
+  font-size: 30px;
 }
 
 .temperature {
   font-family: "Poppins", sans-serif;
   font-size: 23px;
-  position: relative;
-  left: 40px;
-  top:-50px
   letter-spacing: -2px;
 }
 
 .degrees {
   position: relative;
   top: -30px;
-  left: 32px;
+  letter-spacing: -2px;
 }
 
 .card-img-top {
@@ -63,19 +56,17 @@ input {
   background-image: url(‘path/image.jpg’);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 30vh;
+  height: 38vh;
 }
 
 #background-mask {
-  height: 30vh;
+  height: 38vh;
 }
 
 #current-png {
   text-align: left;
-}
-
-#currently.card-title {
-  font-size: 30px;
+  box-sizing: initial;
+  display: inline;
 }
 
 #current-temp {
@@ -86,6 +77,13 @@ input {
 #descrip.card-text {
   font-size: medium;
   font-weight: 750;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#feels.card-text {
+  font-size: smaller;
+  font-weight: 400;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
