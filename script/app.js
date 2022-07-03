@@ -1,22 +1,3 @@
-let now = new Date();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let hours = now.getHours();
-let minutes = String(now.getMinutes()).padStart(2, "0");
-
-let current = document.querySelector("#current-time");
-current.innerHTML = `${day} ${hours}:${minutes}`;
-
 function search(event) {
   event.preventDefault();
 
@@ -25,9 +6,21 @@ function search(event) {
   let checkbox = document.querySelector("#flexRadioDefault1");
   let city = `${searchInput.value}`;
 
-  function presentTemp(response) {
-    let currentTemp = document.querySelector("#current-temp");
+  function presently(response) {
+    let city = response.data.name;
+    let currentTime = document.querySelector("#current-time");
 
+    d = new Date();
+    localTime = response.data.dt * 1000;
+    localOffset = response.data.timezone + 14400;
+    timeZone = localOffset * 1000;
+
+    utc = localTime + timeZone;
+    var Havelock = utc + localOffset;
+    nd = new Date(Havelock);
+    currentTime.innerHTML = new Date(Date.parse(nd));
+
+    let currentTemp = document.querySelector("#current-temp");
     let temperature = Math.round(response.data.main.temp);
     currentTemp.innerHTML = `${temperature}`;
 
@@ -79,7 +72,7 @@ function search(event) {
 
   if (searchInput.value) {
     let promise = axios.get(`${api1}&appid=${apiKey}`);
-    promise.then(presentTemp);
+    promise.then(presently);
   } else if (checkbox.checked) {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude;
@@ -87,7 +80,7 @@ function search(event) {
       let api2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
       let promise2 = axios.get(`${api2}&appid=${apiKey}`);
-      promise2.then(presentTemp);
+      promise2.then(presently);
     });
   } else {
     h3.innerHTML = null;
