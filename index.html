@@ -40,7 +40,7 @@
       >
         <div class="forecast-heading">
           <h1 class="ml-1 mr-1"><strong>The Umbrella Forecast</strong></h1>
-          <h3>A 5-Day Weather Report</h3>
+          <h3 class="mb-3">A 5-Day Weather Report</h3>
         </div>
         <div class="location-search">
           <div
@@ -55,7 +55,7 @@
               style="background-color: rgba(20, 15, 3, 0.248)"
               id="background-mask"
             >
-              <div class="col-12 pt-2 text-center">
+              <div class="col-12 pt-4 text-center">
                 <p class="h3" id="h3"></p>
               </div>
               <form class="form-outline pt-1 ml-2 mr-2" id="location-form">
@@ -102,28 +102,36 @@
                   </div>
                 </div>
               </div>
-              <p class="h3 text-center" id="current-time"></p>
             </div>
           </div>
         </div>
-        <h5 class="card-title text-center mt-3" id="currently">
+        <h5 class="card-title text-center" id="currently">
           Currently
           <i
-            class="fa fa-umbrella fa-fade"
-            style="--fa-animation-duration: 5s; --fa-fade-opacity: 0.6"
+            class="fa fa-umbrella fa-bounce"
+            style="
+              --fa-bounce-start-scale-x: 0;
+              --fa-bounce-start-scale-y: 0;
+              --fa-bounce-height: 0.5;
+              --fa-bounce-jump-scale-x: 0.5;
+              --fa-bounce-land-scale-x: 0.48;
+              --fa-bounce-land-scale-y: 1;
+              --fa-animation-duration: 15s;
+            "
             aria-hidden="true"
             id="umbrella"
           ></i>
         </h5>
+        <p class="h3 text-center" id="current-time"></p>
         <hr />
         <div class="row">
-          <div class="col-5">
-            <div class="weather-icon" id="current-png"></div>
+          <div class="col-4">
+            <div class="weather-icon ml-4" id="current-png"></div>
           </div>
-          <div class="col-7 text-right mt-0 pt-0">
-            <div class="card-body pb-0 ml-0 mr-3">
+          <div class="col-8 text-right mt-0 pt-0">
+            <div class="card-body pb-0">
               <div class="current-temp">
-                <span class="temperature mb-1" id="current-temp"></span>
+                <span class="temperature mb-1 ml-2" id="current-temp"></span>
                 <span class="degrees">
                   <button
                     type="button"
@@ -208,13 +216,6 @@
               >Open-source code
             </a>
             <span> by Stefanie Poole </span>
-            <div>
-              <a
-                href="https://www.deviantart.com/vclouds/art/VClouds-Weather-Icons-179152045"
-                >icons</a
-              >
-              <span>by VClouds</span>
-            </div>
           </div>
         </div>
       </div>
