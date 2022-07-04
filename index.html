@@ -34,7 +34,10 @@
   </head>
   <body>
     <div class="container pt-2">
-      <div class="card mt-2 mb-3 ml-1 mr-1" id="location-card">
+      <div
+        class="card text-white bg-secondary mt-2 mb-3 ml-1 mr-1"
+        id="location-card"
+      >
         <div class="forecast-heading">
           <h1 class="ml-1 mr-1"><strong>The Umbrella Forecast</strong></h1>
           <h3>A 5-Day Weather Report</h3>
@@ -49,10 +52,13 @@
           >
             <div
               class="mask rounded"
-              style="background-color: rgba(20, 15, 3, 0.432)"
+              style="background-color: rgba(20, 15, 3, 0.248)"
               id="background-mask"
             >
-              <form class="form-outline pt-5 ml-2 mr-2" id="location-form">
+              <div class="col-12 pt-2 text-center">
+                <p class="h3" id="h3"></p>
+              </div>
+              <form class="form-outline pt-1 ml-2 mr-2" id="location-form">
                 <div class="input-group pt-2">
                   <input
                     type="text"
@@ -96,16 +102,11 @@
                   </div>
                 </div>
               </div>
-              <div class="row text-align-right">
-                <div class="col-6 pt-2">
-                  <p class="h3 ml-2" id="h3"></p>
-                  <p class="h3 ml-2" id="current-time"></p>
-                </div>
-              </div>
+              <p class="h3 text-center" id="current-time"></p>
             </div>
           </div>
         </div>
-        <h5 class="card-title text-center mt-2" id="currently">
+        <h5 class="card-title text-center mt-3" id="currently">
           Currently
           <i
             class="fa fa-umbrella fa-fade"
@@ -114,6 +115,7 @@
             id="umbrella"
           ></i>
         </h5>
+        <hr />
         <div class="row">
           <div class="col-5">
             <div class="weather-icon" id="current-png"></div>
@@ -161,35 +163,35 @@
         </div>
       </div>
       <div class="card-deck">
-        <div class="card text-white bg-dark">
+        <div class="card text-white bg-secondary">
           <h5 class="card-title text-center" id="following-day"></h5>
           <img class="card-img-top" src="icons/02d.png" alt="weather-png" />
           <div class="card-body">
             <p class="card-text text-center"><strong>0°|0°</strong></p>
           </div>
         </div>
-        <div class="card text-white bg-dark">
+        <div class="card text-white bg-secondary">
           <h5 class="card-title text-center" id="2-days-later"></h5>
           <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
           <div class="card-body">
             <p class="card-text text-center"><strong>0°|0°</strong></p>
           </div>
         </div>
-        <div class="card text-white bg-dark">
+        <div class="card text-white bg-secondary">
           <h5 class="card-title text-center" id="3-days-later"></h5>
           <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
           <div class="card-body">
             <p class="card-text text-center"><strong>0°|0°</strong></p>
           </div>
         </div>
-        <div class="card text-white bg-dark">
+        <div class="card text-white bg-secondary">
           <h5 class="card-title text-center" id="4-days-later"></h5>
           <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
           <div class="card-body">
             <p class="card-text text-center"><strong>0°|0°</strong></p>
           </div>
         </div>
-        <div class="card text-white bg-dark">
+        <div class="card text-white bg-secondary">
           <h5 class="card-title text-center" id="5-days-later"></h5>
           <img class="card-img-top" src="icons/01d.png" alt="weather-png" />
           <div class="card-body">
@@ -199,7 +201,7 @@
       </div>
       <div class="container">
         <div class="row mt-2">
-          <div class="col-12 align-items-center">
+          <div class="col-12 align-items-center text-white">
             <a
               href="https://github.com/stefmpoole/weather-forecast-app.git"
               id="open-source-link"

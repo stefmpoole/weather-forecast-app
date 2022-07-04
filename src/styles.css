@@ -14,7 +14,13 @@ h3 {
   font-size: 20px;
   font-weight: 600;
   text-align: center;
-  color: #221f1d;
+  color: #ffffff;
+}
+
+hr {
+  border: none;
+  height: 0px;
+  box-shadow: 0 1px 2px 1px rgb(0, 0, 0);
 }
 
 input {
@@ -22,8 +28,8 @@ input {
   display: inline-flex;
 }
 
-#currently {
-  font-size: 30px;
+.container {
+  background: black;
 }
 
 .temperature {
@@ -49,19 +55,23 @@ input {
 }
 
 #current-time {
-  font-size: 18px;
-  margin-top: 15px;
+  font-size: 15px;
+  margin-top: 170px;
 }
 
 #background-image {
   background-image: url(‘path/image.jpg’);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 42vh;
+  height: 50vh;
 }
 
 #background-mask {
-  height: 42vh;
+  height: 50vh;
+}
+
+#currently {
+  font-size: 30px;
 }
 
 #current-png {
@@ -71,8 +81,12 @@ input {
 }
 
 #current-temp {
-  color: #221f1d;
+  color: #ffffff;
   font-size: 45px;
+}
+
+#far {
+  color: #ffffff;
 }
 
 #cel {
