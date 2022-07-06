@@ -6,34 +6,48 @@ function search(event) {
   let checkbox = document.querySelector("#flexRadioDefault1");
   let city = `${searchInput.value}`;
 
-  function displayForecast() {
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+  }
+
+  function displayForecast(response) {
+    let forecast = response.data.daily;
+    console.log(forecast);
     let forecastElement = document.querySelector("#forecast");
 
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
     let forecastHTML = `<div class="card-deck">`;
-    days.forEach(function (day) {
-      forecastHTML =
-        forecastHTML +
-        `
+    forecast.forEach(function (forecastDay, index) {
+      if (index < 5) {
+        forecastHTML =
+          forecastHTML +
+          `
         <div class= "card bg-secondary">
           <div class= "card-title text-center text-white mb-0">
-           <div class="weather-forecast-date">${day}</div>
+           <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
           </div>
-          <img class="card-img-top" src="icons/01d.png" alt="weather-png">
+          <img class="card-img-top" src="icons/${
+            forecastDay.weather[0].icon
+          }.png" alt="weather-png">
           <div class="weather-forecast-temperatures text-white text-center">
-            <span class="weather-forecast-temperature-max"> 0° | </span>
-            <span class="weather-forecast-temperature-min"> 0° </span>
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° | </span>
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}° </span>
           </div>
         </div>
       `;
+      }
     });
 
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
-    console.log(forecastHTML);
   }
-  displayForecast();
 
   function presently(response) {
     let city = response.data.name;
@@ -93,6 +107,19 @@ function search(event) {
     } else if (checkbox.checked) {
       h3.innerHTML = response.data.name;
     }
+
+    function getForecast(coordinates) {
+      let lon = response.data.coord.lon;
+      let lat = response.data.coord.lat;
+      let apiKey = "b1bc3da2669fb6d87af27aa8196f619e";
+      let units = "imperial";
+
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+      axios.get(apiUrl).then(displayForecast);
+      console.log(apiUrl);
+    }
+
+    getForecast();
   }
 
   let apiKey = "b1bc3da2669fb6d87af27aa8196f619e";
