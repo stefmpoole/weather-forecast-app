@@ -6,6 +6,35 @@ function search(event) {
   let checkbox = document.querySelector("#flexRadioDefault1");
   let city = `${searchInput.value}`;
 
+  function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+    let forecastHTML = `<div class="card-deck">`;
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class= "card bg-secondary">
+          <div class= "card-title text-center text-white mb-0">
+           <div class="weather-forecast-date">${day}</div>
+          </div>
+          <img class="card-img-top" src="icons/01d.png" alt="weather-png">
+          <div class="weather-forecast-temperatures text-white text-center">
+            <span class="weather-forecast-temperature-max"> 0° | </span>
+            <span class="weather-forecast-temperature-min"> 0° </span>
+          </div>
+        </div>
+      `;
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+  }
+  displayForecast();
+
   function presently(response) {
     let city = response.data.name;
     let currentTime = document.querySelector("#current-time");
