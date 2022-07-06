@@ -16,7 +16,6 @@ function search(event) {
 
   function displayForecast(response) {
     let forecast = response.data.daily;
-    console.log(forecast);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="card-deck">`;
@@ -100,7 +99,6 @@ function search(event) {
     let wind = document.getElementById("wind");
     let windSpeed = Math.round(response.data.wind.speed);
     wind.innerHTML = `Wind: ${windSpeed} mph`;
-    console.log(response);
 
     if (searchInput.value) {
       h3.innerHTML = `${city}`;
@@ -116,7 +114,6 @@ function search(event) {
 
       let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
       axios.get(apiUrl).then(displayForecast);
-      console.log(apiUrl);
     }
 
     getForecast();
